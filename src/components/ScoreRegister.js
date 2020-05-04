@@ -8,7 +8,7 @@ function ScoreRegisterModal(props) {
     <>
       <Modal show={context.stopGame} size="sm" centered onHide={context.resetGame}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Game Over</Modal.Title>
         </Modal.Header>
         <Modal.Body>
                   Woohoo, you scored <em>{context.score}</em> points! <br />
