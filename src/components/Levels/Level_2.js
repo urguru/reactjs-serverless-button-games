@@ -29,6 +29,13 @@ export default class Level_2 extends Component {
             this.setState({error:true})
         }
     }
+    handleGameOver=()=>{
+        this.setState({
+            left: true,
+            right: false,
+            error: false})
+        this.context.stopGameFunc();
+    }
 
     static contextType = UsersContext;
     render() {
@@ -48,6 +55,7 @@ export default class Level_2 extends Component {
                                 <Timer
                                     minutes={0}
                                     stopGame={this.context.stopGame}
+                                    stopGameFunc={this.handleGameOver}
                                     seconds={5}
                                 />
                             </Col>
@@ -67,7 +75,7 @@ export default class Level_2 extends Component {
                         </Col>
                         <Col className="text-center">
                             <Button variant={this.state.right ? "success" : "danger"}  name="right" onClick={this.handleOnClick}>
-                                {this.context.startGame ? "Right" : "Start"}
+                                {this.context.startGame ? "Right" : "Not me"}
                             </Button>
                         </Col>
                     </Row>
@@ -77,7 +85,7 @@ export default class Level_2 extends Component {
                         </Col>
                     </Row>
                 </Container>
-                <ScoreRegisterModal level={1} />
+                <ScoreRegisterModal level={2} />
             </React.Fragment>
         );
     }

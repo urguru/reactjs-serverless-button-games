@@ -21,7 +21,7 @@ export default class Timer extends Component {
             }
             if(seconds===0){
                 if(minutes===0){
-                    this.context.stopGameFunc()
+                    this.props.stopGameFunc()
                 clearInterval(this.myInterval)}
                 else{
                     this.setState({

@@ -56,7 +56,8 @@ class UsersProvider extends Component {
       });
       return { user_name: user.user_name, score: sum };
     });
-    return tableData.sort((a,b)=>b.score-a.score);
+    const top10List=tableData.sort((a,b)=>b.score-a.score);
+    return top10List.slice(0,10)
   };
 
   generateLevelWiseTableData=()=>{

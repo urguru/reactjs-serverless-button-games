@@ -25,6 +25,7 @@ export default class Level_1 extends Component {
                 <Timer
                   minutes={0}
                   stopGame={this.context.stopGame}
+                  stopGameFunc={this.context.stopGameFunc}
                   seconds={5}
                 />
               </Col>
